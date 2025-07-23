@@ -1,0 +1,35 @@
+section {
+    width: 100vw;
+    height: 100px;
+    background-color: var(--primary-color);
+    border-bottom: 3px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    width: 100%;
+    max-width: 1920px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 128px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+}
+
+.logo {
+    
+    
+  
+        object-fit: contain;
+        width: 100px;
+    
+}
