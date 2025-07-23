@@ -21,10 +21,31 @@ a {
     color: var(--secondary-color);
     transform: scale(1.0);
     transition: transform 75ms ease-in-out;
+    font-weight: bold;
 
     &:hover {
         transform: scale(1.2);
         color: white;
+    }
+}
+
+.primary-button {
+    border: solid 3px var(--primary-color);
+    padding: 4px 8px;
+    background-color: var(--primary-color);
+    cursor: pointer;
+
+
+
+    >span {
+        color: white;
+    }
+
+
+    &:hover {
+        border-color: white;
+        transform: scale(1.2);
+
     }
 }
 
