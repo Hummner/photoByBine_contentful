@@ -30,21 +30,23 @@ a {
 }
 
 .primary-button {
-    border: solid 3px var(--primary-color);
     padding: 4px 8px;
     background-color: var(--primary-color);
     cursor: pointer;
+    transform: scale(1);
+    transition: transform 75ms ease-in-out;
 
 
 
     >span {
         color: white;
+        width: fit-content;
     }
 
 
     &:hover {
-        border-color: white;
-        transform: scale(1.2);
+        filter: brightness(1.2);
+        transform: scale(1.1);
 
     }
 }
