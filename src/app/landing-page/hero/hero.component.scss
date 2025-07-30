@@ -12,3 +12,19 @@ section {
     align-items: center;
     height: 100%;
 }
+
+h3 {
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+.next-button-canvas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}

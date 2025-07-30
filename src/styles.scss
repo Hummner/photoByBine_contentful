@@ -30,22 +30,48 @@ a {
 }
 
 .primary-button {
-    padding: 4px 8px;
+    padding: 8px 16px;
     background-color: var(--primary-color);
     cursor: pointer;
     transform: scale(1);
     transition: transform 75ms ease-in-out;
+    width: fit-content;
 
 
 
     >span {
         color: white;
         width: fit-content;
+        font-size: 24px;
     }
 
 
     &:hover {
         filter: brightness(1.2);
+        transform: scale(1.1);
+
+    }
+}
+
+.secondary-button {
+    padding: 8px 16px;
+    background-color: var(--secondary-color);
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 75ms ease-in-out;
+    width: fit-content;
+
+
+
+    >span {
+        color: white;
+        width: fit-content;
+        font-size: 24px;
+    }
+
+
+    &:hover {
+        filter: brightness(1.4);
         transform: scale(1.1);
 
     }
