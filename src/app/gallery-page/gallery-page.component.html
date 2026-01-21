@@ -1,9 +1,24 @@
-<p>gallery-page works!</p>
+<section>
+    <main>
 
 
-@for (category of this.categories; track $index) {
 
 
-    <h2>{{category.title}}</h2>
 
-}
+
+        @for (category of this.categories; track $index) {
+
+
+
+
+        <div class="container">
+            <img src="{{category.coverImage}}" alt="">
+            <div class="category-name">
+
+                <h2>{{category.title}}</h2>
+            </div>
+        </div>
+
+        }
+    </main>
+</section>
