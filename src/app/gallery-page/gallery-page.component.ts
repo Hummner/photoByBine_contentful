@@ -1,5 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ContentfulService } from '../services/contentful.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-gallery-page',
@@ -9,14 +10,20 @@ import { ContentfulService } from '../services/contentful.service';
   styleUrl: './gallery-page.component.scss'
 })
 export class GalleryPageComponent implements OnInit {
+  
 
   categories!: any;
   photos!: any;
 
   contentfulService = inject(ContentfulService)
+
+
+  constructor(private router:Router) {
+
+  }
   ngOnInit(): void {
     this.contentfulService.getGallery().subscribe(
-      (res) => {
+      (res:any) => {
         this.categories = this.loadData(res);
         this.photos = res.includes.Assets
         console.log(this.categories);
@@ -34,7 +41,8 @@ export class GalleryPageComponent implements OnInit {
         title: category.fields.title,
         description: category.fields.description,
         photoIds: category.fields.photos,
-        coverImage: this.loadCoverImage(photos, category.fields.coverImage.sys.id)
+        coverImage: this.loadCoverImage(photos, category.fields.coverImage.sys.id),
+        slug: category.fields.slug
       }
     }
     )
@@ -47,5 +55,10 @@ export class GalleryPageComponent implements OnInit {
   loadCoverImage(photos: any, fieldId: string) {
     const image = this.findAssetById(photos, fieldId)
     return image.fields.file.url
+  }
+
+  openGallery(slug: string) {
+    let url = `gallery/${slug}`
+    this.router.navigateByUrl(url)
   }
 }
