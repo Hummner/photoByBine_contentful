@@ -27,11 +27,6 @@ export class GalleryComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     this.route.params.subscribe(param => console.log(this.gallerySlug = param['galleryName']))
-
-    if (!this.contentful.gallery$) {
-      await this.contentful.getGallery()
-    }
-
     this.getData()
   }
 
@@ -39,7 +34,6 @@ export class GalleryComponent implements OnInit {
     this.contentful.gallery$.subscribe((res: any) => {
       console.log(res);
       
-
       let gallery = res.items.find((gallery: any) => gallery.fields.slug == this.gallerySlug)
       if (gallery) {
         this.galleryName = gallery.fields.title

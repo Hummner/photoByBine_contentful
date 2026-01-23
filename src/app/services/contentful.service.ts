@@ -14,6 +14,8 @@ export class ContentfulService {
   constructor(private http: HttpClient) { }
 
   getGallery() {
+    console.log("getGallery");
+    
     this.gallery$ = this.http.get<any>(
       `${contentful.baseURL}/spaces/${contentful.spaceId}/entries`, {
         params: {
@@ -25,8 +27,10 @@ export class ContentfulService {
       }
     }
     ).pipe(
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: false })
     )
+    console.log(this.gallery$);
+    
     return this.gallery$
   }
 }

@@ -22,7 +22,7 @@ export class GalleryPageComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    this.contentfulService.getGallery().subscribe(
+    this.contentfulService.gallery$.subscribe(
       (res:any) => {
         this.categories = this.loadData(res);
         this.photos = res.includes.Assets
@@ -34,6 +34,7 @@ export class GalleryPageComponent implements OnInit {
   }
 
   loadData(res: any) {
+    
     const items = res.items
     const photos = res.includes.Asset
     return this.categories = items.map((category: any) => {

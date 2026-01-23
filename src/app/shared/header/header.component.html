@@ -1,15 +1,26 @@
 <section>
     <div class="content">
-        <div >
-            <a href="#home">
+        <div>
+            <a routerLink="/">
                 <img class="logo" src="assets/logo/Logo_Bine_Text_mint.png" alt="logo">
             </a>
         </div>
         <nav>
-            <a href="">Home</a>
-            <a href="">Über mich</a>
+            <a routerLink="/">Home</a>
             <a routerLink="/gallery">Gallerie</a>
-            <a href="">Kontakt</a>
+            <a href="https://merch24.eu/contact">Kontakt</a>
         </nav>
+        <div [matMenuTriggerFor]="mobileMenu" class="mobile-menu">
+            <img src="assets/icons/menu.svg" alt="">
+        </div>
     </div>
 </section>
+
+
+<mat-menu #mobileMenu="matMenu">
+    <div class="mobile-nav">
+            <a routerLink="/">Home</a>
+            <a routerLink="/gallery">Gallerie</a>
+            <a href="https://merch24.eu/contact">Kontakt</a>
+    </div>
+</mat-menu>
