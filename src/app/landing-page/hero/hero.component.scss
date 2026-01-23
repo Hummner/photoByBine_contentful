@@ -16,10 +16,12 @@ section {
 h1 {
     color: white;
     font-weight: bold;
+    text-align: center;
 }
 
 p {
     color: white;
+    text-align: center;
 }
 
 .next-button-canvas {
@@ -28,4 +30,15 @@ p {
     align-items: center;
     flex-direction: column;
 
+}
+
+.primary-button {
+    margin-top: 24px;
+    border-radius: 10px;
+
+    &:hover {
+        >a {
+            color: white;
+        }
+    }
 }

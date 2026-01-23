@@ -1,27 +1,42 @@
-# PhotoByBine
+# Photo by Bine - First Page with Contentful
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.6.
+This project is **my first website built with Contentful** as a headless CMS.  
+The main goal was to learn how to **separate content from the frontend** and load it dynamically from a CMS.
 
-## Development server
+## 🚀 Tech Stack
+- Angular
+- Contentful (Content Delivery API)
+- RxJS
+- HTML / CSS / TypeScript
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🧩 Content Model
+The website is structured using a **Page-based content model** in Contentful:
 
-## Code scaffolding
+- **1 Content Type = 1 page**
+- Each Page entry contains:
+  - a slug
+  - SEO data
+  - a list of sections
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Sections (Hero, Gallery, Text, CTA, etc.) are implemented as separate Content Types  
+and are linked to the Page via reference fields.  
+The order of the references defines the render order on the page.
 
-## Build
+## 🔄 Data Fetching
+- Each page is loaded using **a single API request**
+- Content is fetched via Angular services
+- `shareReplay` is used to cache responses and prevent unnecessary requests during route navigation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 🎯 What I Learned
+- Designing content models in Contentful
+- Building pages with reusable section components
+- Optimizing API requests
+- Caching data in Angular using RxJS
+- Understanding the headless CMS approach
 
-## Running unit tests
+## 📌 Notes
+This is a learning project.  
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Feedback and suggestions are always welcome 🙂

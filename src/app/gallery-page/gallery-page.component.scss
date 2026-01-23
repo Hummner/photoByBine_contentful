@@ -17,7 +17,7 @@ main {
     max-width: 1920px;
     gap: 40px;
     flex-wrap: wrap;
-    padding: 0 24px;
+    padding: 24px 24px;
 }
 
 
@@ -79,4 +79,17 @@ main {
 .container:hover .category-name {
     bottom: 50%;
     transform: translate(-50%, 50%);
+}
+
+@media (max-width:400px) {
+    .container {
+        width: 200px;
+        height: 200px;
+    }
+
+    .category-name {
+        >h2 {
+            font-size: 20px;
+        }
+    }
 }
