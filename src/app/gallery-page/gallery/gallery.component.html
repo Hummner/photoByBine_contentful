@@ -3,6 +3,8 @@
         <h2>{{galleryName}}</h2>
     </div>
     <div class="divider"></div>
+    <p class="gallery-description">{{galleryDescription}}</p>
+    <div class="divider"></div>
     <div class="gallery">
         <img *ngFor="let img of photoUrls" [src]="img" loading="lazy" />
     </div>

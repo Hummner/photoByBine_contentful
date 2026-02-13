@@ -17,6 +17,7 @@ export class GalleryComponent implements OnInit {
   gallerySlug!: string;
   galleryName!: string;
   gallery!: any;
+  galleryDescription!: string
   contentful = inject(ContentfulService)
   photoUrls:any = [];
 
@@ -37,6 +38,7 @@ export class GalleryComponent implements OnInit {
       let gallery = res.items.find((gallery: any) => gallery.fields.slug == this.gallerySlug)
       if (gallery) {
         this.galleryName = gallery.fields.title
+        this.galleryDescription = gallery.fields.description.content[0].content[0].value
         gallery.fields.photos.forEach((photoItem:any) => {
           const photoId = photoItem.sys.id
           let photoElement = res.includes.Asset.find((el:any) => el.sys.id == photoId)
