@@ -1,4 +1,5 @@
 <section>
+    @if (photoUrls.length > 0) {
     <div class="gallery-header">
         <h2>{{galleryName}}</h2>
     </div>
@@ -8,4 +9,8 @@
     <div class="gallery">
         <img *ngFor="let img of photoUrls" [src]="img" loading="lazy" />
     </div>
+    }@else {
+        <mat-spinner></mat-spinner>
+    }
+
 </section>

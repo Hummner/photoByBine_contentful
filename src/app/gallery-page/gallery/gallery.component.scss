@@ -6,6 +6,7 @@ section {
     align-items: center;
     flex-direction: column;
     margin-top: 24px;
+    min-height: 500px;
 
 }
 
@@ -56,6 +57,10 @@ section {
     width: 60%;
     height: 2px;
     background-color: var(--primary-color);
+}
+
+::ng-deep .mdc-circular-progress__indeterminate-circle-graphic {
+    stroke: var(--primary-color) !important;
 }
 
 @media (max-width: 1024px) {
